@@ -1,0 +1,3 @@
+Assets used in this project:
+
+No third party assets have been added yet. All visuals use CSS/SVG fallbacks.

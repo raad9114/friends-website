@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="day">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cinematic, unofficial, non-commercial fan experience inspired by the television series Friends.">
+    <meta name="author" content="Zaoyad Khan Raad">
+    <title>The One With the Website - A Friends Fan Experience</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Inline favicon fallback -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+</head>
+<body>
+
+    <!-- 1. Apartment-door preloader -->
+    <div id="preloader" class="preloader" aria-live="polite">
+        <div class="door">
+            <div class="peephole">
+                <div class="peephole-frame"></div>
+            </div>
+            <div class="apartment-number">20</div>
+        </div>
+        <div class="preloader-text">
+            <h2>The Gang Will Be Right With You</h2>
+            <p>Saving Your Spot on the Couch</p>
+        </div>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loading-bar"></div>
+        </div>
+        <div class="loading-percentage" id="loading-percentage">0%</div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <!-- 2. Fixed navigation -->
+    <header class="main-header">
+        <nav class="main-nav" aria-label="Main Navigation">
+            <a href="#hero" class="logo" aria-label="The One With the Website Home">
+                <span class="logo-text">TOW <span class="dot red-dot"></span> The Website</span>
+            </a>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#the-six">The Six</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#connections">Connections</a></li>
+                <li><a href="#apartments">Apartments</a></li>
+                <li><a href="#episodes">Episodes</a></li>
+                <li><a href="#memories">Memories</a></li>
+                <li><a href="#trivia">Trivia</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button id="theme-toggle" class="icon-button" aria-label="Switch to New York Night theme" title="Switch Theme">
+                    <svg class="icon theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path class="moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        <circle class="sun" cx="12" cy="12" r="5"></circle>
+                        <line class="sun-ray" x1="12" y1="1" x2="12" y2="3"></line>
+                        <line class="sun-ray" x1="12" y1="21" x2="12" y2="23"></line>
+                        <line class="sun-ray" x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line class="sun-ray" x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line class="sun-ray" x1="1" y1="12" x2="3" y2="12"></line>
+                        <line class="sun-ray" x1="21" y1="12" x2="23" y2="12"></line>
+                        <line class="sun-ray" x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line class="sun-ray" x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <button id="audio-toggle" class="icon-button" aria-label="Play ambient sound" title="Toggle Sound">
+                    <svg class="icon audio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path class="sound-wave wave-1" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        <line class="sound-muted" x1="23" y1="1" x2="1" y2="23" style="display: none; stroke: currentColor;"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- 3. Opening-credits hero -->
+        <section id="hero" class="hero-section">
+            <div class="hero-background"></div>
+            
+            <div class="hero-content">
+                <p class="hero-kicker">Six Friends. Ten Seasons. One Unforgettable Story.</p>
+                <h1 class="hero-title">
+                    <span class="title-word">THE</span>
+                    <span class="dot red-dot"></span>
+                    <span class="title-word">ONE</span>
+                    <span class="dot blue-dot"></span>
+                    <span class="title-word">WITH</span>
+                    <span class="dot yellow-dot"></span>
+                    <span class="title-word">THE</span>
+                    <span class="title-word highlight">WEBSITE</span>
+                </h1>
+                <p class="hero-subtitle">Welcome to the place where friendship, coffee, and chaos are always on the menu.</p>
+                
+                <div class="hero-actions">
+                    <a href="#the-six" class="btn btn-primary">Meet the Six <span class="arrow" aria-hidden="true">→</span></a>
+                    <a href="#quiz" class="btn btn-secondary">Find Your Character <span class="coffee-icon" aria-hidden="true">☕</span></a>
+                </div>
+
+                <div class="three-color-divider" aria-hidden="true">
+                    <span class="red-dot"></span>
+                    <span class="blue-dot"></span>
+                    <span class="yellow-dot"></span>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-number">06</span><span class="stat-label">Friends</span></div>
+                <div class="stat"><span class="stat-number">10</span><span class="stat-label">Seasons</span></div>
+                <div class="stat"><span class="stat-number">236</span><span class="stat-label">Episodes</span></div>
+                <div class="stat"><span class="stat-number">01</span><span class="stat-label">Orange Couch</span></div>
+            </div>
+
+            <div class="scroll-indicator" aria-hidden="true">
+                <span class="mouse"></span>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- 4. Featured quote -->
+        <section id="featured-quote" class="featured-quote-section">
+            <div class="container">
+                <p class="section-kicker">Could This Be Any More Iconic?</p>
+                
+                <div class="quote-card-container">
+                    <blockquote class="quote-card">
+                        <span class="quote-mark left" aria-hidden="true">“</span>
+                        <p class="quote-text">I'll be there for you.</p>
+                        <span class="quote-mark right" aria-hidden="true">”</span>
+                        
+                        <footer>
+                            <cite>A Story About Friendship</cite>
+                            <p class="supporting-line">Through every breakup, new job, bad haircut, and cup of coffee.</p>
+                        </footer>
+
+                        <div class="coffee-ring" aria-hidden="true"></div>
+                        <div class="handwritten-note top-right" aria-hidden="true">Always! <svg viewBox="0 0 100 100" width="30"><path d="M50 80 Q 20 50, 50 20 Q 80 50, 50 80" fill="none" stroke="currentColor" stroke-width="4"/></svg></div>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Meet the Six -->
+        <section id="the-six" class="the-six-section">
+            <div class="container">
+                <h2 class="section-title">Meet the Six</h2>
+                <div class="character-grid" id="character-grid">
+                    <!-- Character cards injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. “Which Friend Are You?” personality quiz -->
+        <section id="quiz" class="quiz-section">
+            <div class="container">
+                <div class="quiz-container">
+                    <h2 class="section-title">Which Friend Are You?</h2>
+                    <p class="section-subtitle">Answer a few questions and find out who would save your seat at Central Perk.</p>
+                    
+                    <div id="quiz-app" class="quiz-app">
+                        <!-- Quiz content injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Friendship and relationship web -->
+        <section id="connections" class="connections-section">
+            <div class="container">
+                <h2 class="section-title">The Connections That Made the Story</h2>
+                <div class="connections-container">
+                    <div class="connections-web" id="connections-web">
+                        <!-- SVG / DOM Nodes injected via JS -->
+                    </div>
+                    <div class="connections-panel" id="connections-panel" aria-live="polite">
+                        <h3 class="panel-title">Select a character</h3>
+                        <p class="panel-desc">Click on a node in the web to see how everyone is connected.</p>
+                        <ul id="connections-list" class="connections-list"></ul>
+                        <button id="reset-connections" class="btn btn-secondary btn-small" style="display:none;">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Apartment explorer -->
+        <section id="apartments" class="apartments-section">
+            <div class="container">
+                <h2 class="section-title">Across the Hall</h2>
+                <p class="section-subtitle">Explore the spaces we called home for ten years.</p>
+
+                <div class="apartment-explorer">
+                    <div class="explorer-tabs" role="tablist">
+                        <button role="tab" aria-selected="true" aria-controls="monica-apt" id="tab-monica" class="tab-btn active">Monica & Rachel's</button>
+                        <button role="tab" aria-selected="false" aria-controls="joey-apt" id="tab-joey" class="tab-btn">Joey & Chandler's</button>
+                        <button role="tab" aria-selected="false" aria-controls="central-perk" id="tab-perk" class="tab-btn">Central Perk</button>
+                    </div>
+
+                    <div class="explorer-content">
+                        <!-- Monica's -->
+                        <div id="monica-apt" class="tab-panel active" role="tabpanel" aria-labelledby="tab-monica">
+                            <div class="room-illustration monica-room">
+                                <div class="hotspot" style="top: 20%; left: 15%;" data-item="door" tabindex="0" role="button" aria-label="Purple Door and Peephole">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                                <div class="hotspot" style="top: 60%; left: 40%;" data-item="table" tabindex="0" role="button" aria-label="Kitchen Table">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                                <div class="hotspot" style="top: 30%; left: 75%;" data-item="dog" tabindex="0" role="button" aria-label="Giant White Dog">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                                <div class="hotspot" style="top: 40%; left: 90%;" data-item="closet" tabindex="0" role="button" aria-label="Secret Closet">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Joey's -->
+                        <div id="joey-apt" class="tab-panel" role="tabpanel" aria-labelledby="tab-joey" hidden>
+                            <div class="room-illustration joey-room">
+                                <div class="hotspot" style="top: 50%; left: 30%;" data-item="foosball" tabindex="0" role="button" aria-label="Foosball Table">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                                <div class="hotspot" style="top: 60%; left: 60%;" data-item="recliners" tabindex="0" role="button" aria-label="Recliners">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                                <div class="hotspot" style="top: 30%; left: 10%;" data-item="doodle" tabindex="0" role="button" aria-label="Magna Doodle">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                                <div class="hotspot" style="top: 40%; left: 80%;" data-item="canoe" tabindex="0" role="button" aria-label="Canoe">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Central Perk -->
+                        <div id="central-perk" class="tab-panel" role="tabpanel" aria-labelledby="tab-perk" hidden>
+                            <div class="room-illustration perk-room">
+                                <div class="hotspot" style="top: 60%; left: 50%;" data-item="couch" tabindex="0" role="button" aria-label="Orange Couch">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                                <div class="hotspot" style="top: 30%; left: 80%;" data-item="counter" tabindex="0" role="button" aria-label="Coffee Counter">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                                <div class="hotspot" style="top: 50%; left: 20%;" data-item="stage" tabindex="0" role="button" aria-label="Stage Microphone">
+                                    <span class="hotspot-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info Panel -->
+                        <div class="hotspot-info-panel" id="hotspot-info" aria-live="polite" hidden>
+                            <button class="close-info" aria-label="Close info panel">×</button>
+                            <h4 id="hotspot-title">Item Title</h4>
+                            <p id="hotspot-desc">Item description goes here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Episode guide -->
+        <section id="episodes" class="episodes-section">
+            <div class="container">
+                <h2 class="section-title">The One With All the Episodes</h2>
+                
+                <div class="episode-toolbar">
+                    <div class="search-box">
+                        <label for="episode-search" class="sr-only">Search episodes</label>
+                        <input type="text" id="episode-search" placeholder="Search by title, character, theme...">
+                    </div>
+                    
+                    <div class="filters-wrap">
+                        <select id="season-filter" aria-label="Filter by season">
+                            <option value="all">All Seasons</option>
+                            <option value="1">Season 1</option>
+                            <option value="2">Season 2</option>
+                            <option value="3">Season 3</option>
+                            <option value="4">Season 4</option>
+                            <option value="5">Season 5</option>
+                            <option value="6">Season 6</option>
+                            <option value="7">Season 7</option>
+                            <option value="8">Season 8</option>
+                            <option value="9">Season 9</option>
+                            <option value="10">Season 10</option>
+                        </select>
+                        <select id="theme-filter" aria-label="Filter by theme">
+                            <option value="all">All Themes</option>
+                            <option value="thanksgiving">Thanksgiving</option>
+                            <option value="weddings">Weddings</option>
+                            <option value="holidays">Holidays</option>
+                            <option value="relationships">Relationships</option>
+                        </select>
+                        <button id="btn-surprise-episode" class="btn btn-secondary btn-small">Surprise Me</button>
+                    </div>
+                </div>
+
+                <div class="episode-results-meta" aria-live="polite">
+                    Showing <span id="episode-count">0</span> episodes
+                </div>
+
+                <div class="episode-grid" id="episode-grid">
+                    <!-- Episodes injected via JS -->
+                </div>
+                
+                <div class="empty-state" id="episode-empty-state" hidden>
+                    <p>Could there <em>be</em> any fewer results? Try a different search term.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Central Perk memory wall -->
+        <section id="memories" class="memories-section">
+            <div class="container">
+                <h2 class="section-title">Memories from Central Perk</h2>
+                
+                <div class="memory-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="friendship">Friendship</button>
+                    <button class="filter-btn" data-filter="romance">Romance</button>
+                    <button class="filter-btn" data-filter="holidays">Holidays</button>
+                    <button class="filter-btn" data-filter="chaos">Chaos</button>
+                </div>
+
+                <div class="masonry-grid" id="memory-wall">
+                    <!-- Memories injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Running jokes and iconic objects -->
+        <section id="jokes" class="jokes-section">
+            <div class="container">
+                <h2 class="section-title">You Had to Be There</h2>
+                
+                <div class="jokes-grid" id="jokes-grid">
+                    <!-- Jokes injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Trivia night -->
+        <section id="trivia" class="trivia-section">
+            <div class="container">
+                <div class="trivia-container">
+                    <h2 class="section-title">Central Perk Trivia Night</h2>
+                    <div id="trivia-app" class="trivia-app">
+                        <!-- Trivia logic injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Quote carousel -->
+        <section id="quotes" class="quotes-section">
+            <div class="container">
+                <div class="carousel-container" aria-roledescription="carousel" aria-label="Memorable Quotes">
+                    <div class="carousel-track" id="quote-track" aria-live="polite">
+                        <!-- Quotes injected via JS -->
+                    </div>
+                    
+                    <div class="carousel-controls">
+                        <button id="carousel-prev" class="carousel-btn" aria-label="Previous quote">←</button>
+                        <div class="carousel-indicators" id="carousel-indicators"></div>
+                        <button id="carousel-next" class="carousel-btn" aria-label="Next quote">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. Leave a Note form -->
+        <section id="contact" class="contact-section">
+            <div class="container form-container">
+                <div class="sticky-note-wrapper">
+                    <h2 class="section-title">Leave a Note on the Door</h2>
+                    
+                    <form id="leave-note-form" class="note-form" novalidate>
+                        <div class="form-group">
+                            <label for="note-name">Name <span aria-hidden="true">*</span></label>
+                            <input type="text" id="note-name" name="name" required aria-required="true">
+                            <span class="error-msg" id="name-error" aria-live="polite"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="note-email">Email</label>
+                            <input type="email" id="note-email" name="email">
+                            <span class="error-msg" id="email-error" aria-live="polite"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="note-fave">Favorite Character</label>
+                            <select id="note-fave" name="favorite_character">
+                                <option value="">Select...</option>
+                                <option value="rachel">Rachel</option>
+                                <option value="monica">Monica</option>
+                                <option value="phoebe">Phoebe</option>
+                                <option value="joey">Joey</option>
+                                <option value="chandler">Chandler</option>
+                                <option value="ross">Ross</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="note-message">Message <span aria-hidden="true">*</span></label>
+                            <textarea id="note-message" name="message" rows="4" required aria-required="true"></textarea>
+                            <span class="error-msg" id="message-error" aria-live="polite"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Pin My Note</button>
+                        
+                        <div id="form-status" class="form-status" aria-live="polite" hidden></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 15. Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-nav">
+                    <a href="#hero">Home</a>
+                    <a href="#the-six">The Six</a>
+                    <a href="#episodes">Episodes</a>
+                    <a href="#trivia">Trivia</a>
+                </div>
+                
+                <div class="three-color-divider" aria-hidden="true">
+                    <span class="red-dot"></span>
+                    <span class="blue-dot"></span>
+                    <span class="yellow-dot"></span>
+                </div>
+
+                <div class="footer-credits">
+                    <p class="creator-credit">
+                        Created with passion by <a href="https://zaoyadkhanraad.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Zaoyad Khan Raad’s official website">Zaoyad Khan Raad</a> as an unofficial fan experience.
+                    </p>
+                    
+                    <div class="asset-credits">
+                        <p>Font credits: Google Fonts (Bebas Neue, DM Sans, Caveat)</p>
+                        <p>Images & Media: Visual fallbacks and CSS generated graphics.</p>
+                        <p><a href="assets/ASSET-CREDITS.txt" target="_blank" rel="noopener noreferrer">View Full Asset Credits</a></p>
+                    </div>
+
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> This is an unofficial, non-commercial fan project created for educational and entertainment purposes. It is not affiliated with, endorsed by, or sponsored by Warner Bros. Television, NBC, Bright/Kauffman/Crane Productions, the creators, cast, or any related rights holders. Friends and related characters, titles, imagery, quotations, and marks belong to their respective owners.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 16. Reusable global modal -->
+    <div id="global-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close dialog">×</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor" aria-hidden="true"></div>
+    <div id="custom-cursor-ring" class="custom-cursor-ring" aria-hidden="true"></div>
+
+    <!-- Screen Reader Announcer -->
+    <div id="sr-announcer" class="sr-only" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
